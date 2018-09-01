@@ -32,7 +32,10 @@ set formatoptions+=mM
 set fencs=utf-8,gbk
 set fileformat=unix
 
-“ 主体颜色设置
+
+
+
+" 主体颜色设置
 " syntax enable
 " set background=dark
 " colorscheme solarized
@@ -42,11 +45,6 @@ colorscheme gruvbox             "设置主题为 gruvbox
 set guioptions=                 "去掉两边的scrollbar
 set guifont=Monaco:h20          "设置字体和字的大小
 
-
-
-
-
-
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -54,10 +52,6 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-let mapleader = ","
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                          Vundle configuration                           "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 Plugin 'morhetz/gruvbox'
@@ -85,18 +79,16 @@ Plugin 'w0rp/ale'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'skywind3000/asyncrun.vim'
 Plugin 'skywind3000/quickmenu.vim'
+
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 
 
-
-
-
-
 " --------'fatih/vim-go'--------
-” go语言支持插件
+" go语言支持插件
 " vim-go custom mappings
 au FileType go nmap <Leader>s <Plug>(go-implements)
 au FileType go nmap <Leader>i <Plug>(go-info)
@@ -165,24 +157,24 @@ let g:NERDToggleCheckAllLines = 1
 " --------'wsdjeg/vim-cheat'--------
 " 速查手册
 
-“ --------'terryma/vim-expand-region'--------
+" --------'terryma/vim-expand-region'--------
 " 快速选中
 
-” --------'terryma/vim-multiple-cursors'--------
+" --------'terryma/vim-multiple-cursors'--------
 " 多光标操作
 
-“ --------'terryma/vim-smooth-scroll'--------
-” 平滑滚动
+" --------'terryma/vim-smooth-scroll'--------
+" 平滑滚动
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
 noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 
-“ --------'tpope/vim-surround'--------
+" --------'tpope/vim-surround'--------
 " 快速包裹
 
 
-” --------'easymotion/vim-easymotion'--------
+" --------'easymotion/vim-easymotion'--------
 " 快速移动
 " 更改快捷键
 map f <Plug>(easymotion-prefix)
@@ -200,7 +192,7 @@ map fk <Plug>(easymotion-k)
 map fh <Plug>(easymotion-linebackward)
 " 忽略大小写
 let g:EasyMotion_smartcase = 1
-“ 以下常用
+" 以下常用
 " fa 全屏搜索
 " fs 往下搜索
 " fF 往上搜索
@@ -213,16 +205,16 @@ let g:EasyMotion_smartcase = 1
 " fe 往下搜索一个单词结尾处
 " fge 往下搜索一个单词结尾处
 
-“ --------'junegunn/goyo.vim'--------
-” --------'junegunn/limelight.vim'--------
-“ vim阅读模式+关灯
+" --------'junegunn/goyo.vim'--------
+" --------'junegunn/limelight.vim'--------
+" vim阅读模式+关灯
 nmap <Leader>l :Goyo<CR>
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 "进入goyo模式后自动触发limelight,退出后则关闭
 
-” --------'ctrlpvim/ctrlp.vim'--------
-“ 快速搜索文件
+" --------'ctrlpvim/ctrlp.vim'--------
+" 快速搜索文件
 " 打开ctrlp搜索
 let g:ctrlp_map = '<leader>ff'
 let g:ctrlp_cmd = 'CtrlP'
@@ -245,30 +237,30 @@ let g:ctrlp_follow_symlinks=1
 "Ctrl+p/n来在输入的搜索历史上下切换
 
 
-” --------'majutsushi/tagbar'--------
+" --------'majutsushi/tagbar'--------
 "nmap <Leader>tb :TagbarToggle<CR>        "快捷键设置
 let g:tagbar_ctags_bin='ctags'            "ctags程序的路径
 let g:tagbar_width=30                    "窗口宽度的设置
 map <F3> :Tagbar<CR>
 "autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen()     "如果是c语言的程序的话，tagbar自动开启
 
-“ --------'t9md/vim-choosewin'--------
-” 选择窗口
+" --------'t9md/vim-choosewin'--------
+" 选择窗口
 " mapping
 nmap  -  <Plug>(choosewin)
 " show big letters
 let g:choosewin_overlay_enable = 1
 
 
-“ --------'scrooloose/nerdtree'--------
+" --------'scrooloose/nerdtree'--------
 "let NERDTreeWinPos='right'
 let NERDTreeWinSize=30
 map <F2> :NERDTreeToggle<CR>
 " ctrl + w + w窗口切换
 
 
-” --------'fholgado/minibufexpl.vim'--------
-“ 多缓存区
+" --------'fholgado/minibufexpl.vim'--------
+" 多缓存区
 let g:miniBufExplMapWindowNavVim = 1   
 let g:miniBufExplMapWindowNavArrows = 1   
 let g:miniBufExplMapCTabSwitchBufs = 1   
@@ -278,8 +270,8 @@ map <F10> :MBEbp<CR>
 map <F11> :MBEbn<CR>
 
 
-“ --------'kien/tabman.vim'--------
-” 管理Tab窗口
+" --------'kien/tabman.vim'--------
+" 管理Tab窗口
 " mappings to toggle display, and to focus on it
 let g:tabman_toggle = 'tl' "开启关闭tab
 let g:tabman_focus  = 'tf' "将光标移动到tab管理窗口
@@ -289,8 +281,8 @@ let g:tabman_specials = 1 "设为0不显示由插件创建的窗口
 let g:tabman_number = 1 "设为0关闭行号显示
 
 
-” --------'w0rp/ale'--------
-“ 异步检测错误
+" --------'w0rp/ale'--------
+" 异步检测错误
 set nocompatible
 filetype off
 let &runtimepath.=',~/.vim/bundle/ale'
@@ -321,8 +313,8 @@ nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 
-” --------'Valloric/YouCompleteMe'--------
-“ 自动补全
+" --------'Valloric/YouCompleteMe'--------
+" 自动补全
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'   
 let g:ycm_seed_identifiers_with_syntax=1    " 语法关键字补全   
 let g:ycm_confirm_extra_conf=0   " 打开vim时不再询问是否加载ycm_extra_conf.py配置   
@@ -333,14 +325,14 @@ let g:ycm_key_list_select_completion = ['', '']
 let g:ycm_key_list_previous_completion = ['']
 let g:ycm_key_invoke_completion = '<C-Space>'
 
-” --------'skywind3000/asyncrun.vim'--------
-“ 异步运行
+" --------'skywind3000/asyncrun.vim'--------
+" 异步运行
 
-” --------'skywind3000/quickmenu.vim'--------
-“ 选择要执行的操作
+" --------'skywind3000/quickmenu.vim'--------
+" 选择要执行的操作
 
-“ --------'SirVer/ultisnips'--------'honza/vim-snippets'--------
-” 代码片段补全
+" --------'SirVer/ultisnips'--------'honza/vim-snippets'--------
+" 代码片段补全
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
@@ -348,8 +340,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
-
-
 
 
 
